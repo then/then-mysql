@@ -1,14 +1,14 @@
-# my-sql
+# then-mysql
 
 A wrapper for the MySQL driver to use promises, connection pooling and nicer APIs all round
 
-[![Build Status](https://travis-ci.org/ForbesLindesay/my-sql.png?branch=master)](https://travis-ci.org/ForbesLindesay/my-sql)
-[![Dependency Status](https://gemnasium.com/ForbesLindesay/my-sql.png)](https://gemnasium.com/ForbesLindesay/my-sql)
-[![NPM version](https://badge.fury.io/js/my-sql.png)](http://badge.fury.io/js/my-sql)
+[![Build Status](https://travis-ci.org/then/mysql.png?branch=master)](https://travis-ci.org/then/mysql)
+[![Dependency Status](https://gemnasium.com/then/mysql.png)](https://gemnasium.com/then/mysql)
+[![NPM version](https://badge.fury.io/js/then-mysql.png)](http://badge.fury.io/js/then-mysql)
 
 ## Installation
 
-    npm install my-sql
+    npm install then-mysql
 
 ## API
 
