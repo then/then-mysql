@@ -30,6 +30,7 @@ test('connection.call', function (t) {
   connection.query('CREATE PROCEDURE myproc()\nBEGIN\nSELECT 1 + 1 AS solution;\nEND').then(function () {
     return connection.call('myproc');
   }).done(function (result) {
+    console.log('# ' + require('util').inspect(result));
     t.assert(result[0].solution === 2, 'results are retrieved from the database');
   });
 });
