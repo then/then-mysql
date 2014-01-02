@@ -3,10 +3,11 @@
 var test = require('tape');
 var MySql = require('../');
 
-var config = require('./mock.js');
+var mockConnection = new MySql(require('./mock.js'));
+var connection;
 
 if (process.env.TRAVIS) {
-  config = {
+  var config = {
     host: '127.0.0.1',
     database: 'myapp_test',
     user: 'travis',
@@ -14,9 +15,10 @@ if (process.env.TRAVIS) {
     multipleStatements: true
   };
   console.log('# using live database');
+  connection = new MySql(config);
+} else {
+  connection = mockConnection;
 }
-
-var connection = new MySql(config);
 
 test('connection.query', function (t) {
   t.plan(1);
@@ -27,8 +29,8 @@ test('connection.query', function (t) {
 
 test('connection.call', function (t) {
   t.plan(1);
-  connection.query('DELIMITER //\nCREATE PROCEDURE myproc()\nBEGIN\nSELECT 1 + 1 AS solution;\nEND//\nDELIMITER ;').then(function () {
-    return connection.call('myproc');
+  connection.query('CREATE PROCEDURE myproc()\nBEGIN\nSELECT 1 + 1 AS solution;\nEND').then(function () {
+    return mockConnection.call('myproc');
   }).done(function (result) {
     t.assert(result[0].solution === 2, 'results are retrieved from the database');
   });
