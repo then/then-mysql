@@ -8,7 +8,7 @@ var config = require('./mock.js');
 if (process.env.TRAVIS) {
   config = {
     host: '127.0.0.1',
-    database: 'node_mysql_driver_test',
+    database: 'myapp_test',
     user: 'travis',
     password: ''
   };
