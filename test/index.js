@@ -26,7 +26,7 @@ test('connection.query', function (t) {
 
 test('connection.call', function (t) {
   t.plan(1);
-  connection.query('DELIMITER //\nCREATE PROCEDURE myprocname()\nBEGIN\nSELECT 1 + 1 AS solution;\nEND//\nDELIMITER ;').then(function () {
+  connection.query('DELIMITER //  CREATE PROCEDURE myprocname()  BEGIN  SELECT 1 + 1 AS solution;  END//  DELIMITER ;').then(function () {
     return connection.call('myprocname');
   }).done(function (result) {
     t.assert(result[0].solution === 2, 'results are retrieved from the database');
