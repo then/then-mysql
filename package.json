@@ -1,6 +1,6 @@
 {
   "name": "then-mysql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A wrapper for the MySQL driver to use promises, connection pooling and nicer APIs all round",
   "keywords": ["promise", "then", "database", "mysql"],
   "dependencies": {
