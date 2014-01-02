@@ -29,7 +29,9 @@ Connection.prototype.query = function (str, values, cb) {
       return stream;
     }
   } else if (str === 'CALL myproc()') {
-    cb(null, [{solution: 2}], []);
+    cb(null, [[{solution: 2}], {metadata: true}]);
+  } else if (str === 'CALL myprocmulti()') {
+    cb(null, [[{solution: 2}], [{otherSolution: 4}], {metadata: true}]);
   } else if (/CREATE PROCEDURE/.test(str)) {
     cb();
   } else {
