@@ -10,7 +10,8 @@ if (process.env.TRAVIS) {
     host: '127.0.0.1',
     database: 'myapp_test',
     user: 'travis',
-    password: ''
+    password: '',
+    multipleStatements: true
   };
   console.log('# using live database');
 }
@@ -26,8 +27,8 @@ test('connection.query', function (t) {
 
 test('connection.call', function (t) {
   t.plan(1);
-  connection.query('DELIMITER //  CREATE PROCEDURE myprocname()  BEGIN  SELECT 1 + 1 AS solution;  END//  DELIMITER ;').then(function () {
-    return connection.call('myprocname');
+  connection.query('DELIMITER //\nCREATE PROCEDURE myproc()\nBEGIN\nSELECT 1 + 1 AS solution;\nEND//\nDELIMITER ;').then(function () {
+    return connection.call('myproc');
   }).done(function (result) {
     t.assert(result[0].solution === 2, 'results are retrieved from the database');
   });
