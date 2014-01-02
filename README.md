@@ -41,6 +41,7 @@ e.g.
 pool.call(addprocedure, [1, 2]).done(function (result) {
   assert(result[0].solution === 3);
 });
+```
 
 ## License
 
