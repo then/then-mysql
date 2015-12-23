@@ -9,12 +9,12 @@
     "mysql"
   ],
   "dependencies": {
-    "mysql": "~2.10.0",
-    "promise": "~7.1.1",
-    "barrage": "~1.1.0"
+    "mysql": "^2.10.0",
+    "promise": "^7.1.1",
+    "barrage": "^1.1.0"
   },
   "devDependencies": {
-    "tape": "~4.3.0"
+    "tape": "^4.3.0"
   },
   "scripts": {
     "test": "node test/index.js"
