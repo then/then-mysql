@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/then/mysql.git"
+    "url": "https://github.com/then/then-mysql.git"
   },
   "author": "ForbesLindesay",
   "license": "MIT"

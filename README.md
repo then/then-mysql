@@ -2,8 +2,8 @@
 
 A wrapper for the MySQL driver to use promises, connection pooling and nicer APIs all round
 
-[![Build Status](https://travis-ci.org/then/mysql.png?branch=master)](https://travis-ci.org/then/mysql)
-[![Dependency Status](https://gemnasium.com/then/mysql.png)](https://gemnasium.com/then/mysql)
+[![Build Status](https://travis-ci.org/then/then-mysql.png?branch=master)](https://travis-ci.org/then/then-mysql)
+[![Dependency Status](https://gemnasium.com/then/then-mysql.png)](https://gemnasium.com/then/then-mysql)
 [![NPM version](https://badge.fury.io/js/then-mysql.png)](http://badge.fury.io/js/then-mysql)
 
 ## Installation
