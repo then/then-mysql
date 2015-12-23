@@ -23,7 +23,7 @@ function MySql(config) {
         }
       });
     };
-    this._dispose = function () { return Promise.from(null); };
+    this._dispose = function () { return Promise.resolve(null); };
   } else if (typeof config.getConnection === 'function') {
     this._getConnection = Promise.denodeify(config.getConnection.bind(config));
     this._dispose = Promise.denodeify(config.end.bind(config));
@@ -34,7 +34,7 @@ function MySql(config) {
   }
 }
 MySql.prototype.dispose = function () {
-  if (this._disposed) return Promise.from(null);
+  if (this._disposed) return Promise.resolve(null);
   this._disposed = true;
   return this._dispose();
 };

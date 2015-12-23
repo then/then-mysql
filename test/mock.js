@@ -4,7 +4,7 @@ var EventEmitter = require('events').EventEmitter;
 var Promise = require('promise');
 
 module.exports = function getConnection() {
-  return Promise.from(new Connection());
+  return Promise.resolve(new Connection());
 };
 
 function Connection() {
