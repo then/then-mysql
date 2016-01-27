@@ -92,3 +92,7 @@ MySql.prototype.queryStream = function (str, values) {
     return connection.queryStream(str, values);
   });
 };
+
+MySql.escape = mysql.escape;
+MySql.escapeId = mysql.escapeId;
+MySql.format = mysql.format;
